@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* White */
+  --white: #ffffff;
+
+  /* Gray Palette */
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+
+  /* Blue Palette */
+  --blue-200: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+
+  /* Custom Semantic Colors */
+  --dark-bg: #101214;
+  --dark-secondary: #1d1f21;
+  --dark-tertiary: #3b3d40;
+  --blue-primary: #0275ff;
+  --stroke-dark: #2d3135;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    @apply bg-gray-500 text-sm text-gray-900;
+  }
+
+  #root.app {
+    height: 100%;
+    width: 100%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+  .bg-gradient-conic {
+    background-image: conic-gradient(
+      from 180deg at 50% 50%,
+      var(--tw-gradient-stops)
+    );
+  }
+}
+
+@layer utilities {
+  /* --- کلاس‌های پس‌زمینه --- */
+  .bg-dark-bg {
+    @apply bg-[var(--dark-bg)];
+  }
+  .bg-dark-secondary {
+    @apply bg-[var(--dark-secondary)];
+  }
+  .bg-dark-tertiary {
+    @apply bg-[var(--dark-tertiary)];
+  }
+  .bg-blue-primary {
+    @apply bg-[var(--blue-primary)];
+  }
+  .bg-stroke-dark {
+    @apply bg-[var(--stroke-dark)];
+  }
+
+  /* --- کلاس‌های رنگ متن --- */
+  .text-dark-bg {
+    @apply text-[var(--dark-bg)];
+  }
+  .text-dark-secondary {
+    @apply text-[var(--dark-secondary)];
+  }
+  .text-dark-tertiary {
+    @apply text-[var(--dark-tertiary)];
+  }
+  .text-blue-primary {
+    @apply text-[var(--blue-primary)];
+  }
+  .text-stroke-dark {
+    @apply text-[var(--stroke-dark)];
+  }
+
+  /* --- کلاس‌های رنگ حاشیه --- */
+  .border-dark-bg {
+    @apply border-[var(--dark-bg)];
+  }
+  .border-dark-secondary {
+    @apply border-[var(--dark-secondary)];
+  }
+  .border-dark-tertiary {
+    @apply border-[var(--dark-tertiary)];
+  }
+  .border-blue-primary {
+    @apply border-[var(--blue-primary)];
+  }
+  .border-stroke-dark {
+    @apply border-[var(--stroke-dark)];
+  }
 }
