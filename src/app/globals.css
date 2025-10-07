@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   /* White */
@@ -36,7 +37,9 @@
   body {
     height: 100%;
     width: 100%;
-    @apply bg-gray-500 text-sm text-gray-900;
+    @apply bg-white;
+    @apply text-sm;
+    /* @apply dark:bg-black; */
   }
 
   #root.app {
