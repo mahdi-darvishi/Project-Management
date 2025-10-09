@@ -5,7 +5,7 @@ export interface Project {
   name: string;
   description?: string;
   startDate?: string;
-  endData?: string;
+  endDate?: string;
 }
 
 export enum Priority {
@@ -13,12 +13,12 @@ export enum Priority {
   High = "High",
   Medium = "Medium",
   Low = "Low",
-  backlig = "backlig",
+  Backlog = "Backlog",
 }
 
 export enum Status {
   Todo = "To do",
-  WokInProgress = "Work In Progress",
+  WorkInProgress = "Work In Progress",
   UnderReview = "Under Review",
   Completed = "Completed",
 }
@@ -46,7 +46,7 @@ export interface Task {
   status?: Status;
   priority?: Priority;
   tags?: string;
-  startDat?: string;
+  startDate?: string;
   dueDate?: string;
   points?: number;
   projectId: number;
