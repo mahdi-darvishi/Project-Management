@@ -34,7 +34,7 @@ export interface User {
 
 export interface Attachments {
   id: number;
-  fileurl: string;
+  fileURL: string;
   fileName: string;
   taskId: number;
   uploadedById: number;
@@ -54,7 +54,7 @@ export interface Task {
   assignedUserId?: number;
 
   author?: User;
-  assihnee?: User;
+  assignee?: User;
   comments?: Comment[];
   attachments: Attachments[];
 }
