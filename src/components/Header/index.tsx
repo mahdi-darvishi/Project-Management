@@ -1,11 +1,11 @@
 type Props = {
   name: string;
   // eslint-disable-next-line
-  buttonComponnet?: any;
+  buttonComponent?: any;
   isSmallText?: boolean;
 };
 
-const Header = ({ name, buttonComponnet, isSmallText = false }: Props) => {
+const Header = ({ name, buttonComponent, isSmallText = false }: Props) => {
   return (
     <div className="mb-5 flex w-full items-center justify-between">
       <h1
@@ -13,6 +13,7 @@ const Header = ({ name, buttonComponnet, isSmallText = false }: Props) => {
       >
         {name}
       </h1>
+      {buttonComponent}
     </div>
   );
 };
